@@ -34,6 +34,16 @@ Route::group([
             Route::get('logout', 'AuthController@logout');
             Route::get('user', 'AuthController@user')->name('user.information');
         });
+
+        Route::group([
+            'middleware' => 'api',
+            'as' => 'password.',
+            'prefix' => 'password',
+        ], function() {
+            Route::post('create', 'PasswordResetController@create');
+            Route::get('find/{token}', 'PasswordResetController@find')->name('find');
+            Route::post('reset', 'PasswordResetController@reset');
+        });
     });
 
     Route::group([

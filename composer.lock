@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c1e43a2b9e23bdaa69a8f343c0c6e9c",
+    "content-hash": "d992cfa08423ef7ec61310a2e5626e95",
     "packages": [
         {
             "name": "bensampo/laravel-enum",
