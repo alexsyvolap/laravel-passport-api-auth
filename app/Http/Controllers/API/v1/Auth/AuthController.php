@@ -35,6 +35,10 @@ class AuthController extends Controller
         ]);
 
         $user->save();
+
+        $avatar = \Avatar::create($user->name)->getImageObject()->encode('png');
+        \Storage::disk('public_avatars')->put($user->id.'/avatar.png', (string) $avatar);
+
         $user->notify(new SignUpActivate($user));
 
         return response()->json([

@@ -14,13 +14,15 @@ class User extends Authenticatable
 
     protected $dates = ['deleted_at'];
 
+    protected $appends = ['avatar_url'];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'active', 'activation_token', 'role',
+        'name', 'email', 'password', 'active', 'activation_token', 'role', 'avatar',
     ];
 
     /**
@@ -40,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Returned avatar url
+     *
+     * @return string
+     */
+    public function getAvatarUrlAttribute()
+    {
+        return \URL::to('/') . '/avatars/' . $this->id . '/' . $this->avatar;
+    }
 }

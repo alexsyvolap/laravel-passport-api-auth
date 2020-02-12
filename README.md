@@ -9,3 +9,8 @@
 
 ## laravel-passport-api-auth
 Авторизация с помощью библиотеки Passport. С разделением на скоупы для администратора и юзера
+
+## Avatar images lib
+```php{version}-imagick``` <br>
+Add in ```php.ini``` ```extension=imagick.so``` <br>
+```service php{version}-fpm restart```

@@ -14,7 +14,8 @@
         "laravel/framework": "^6.2",
         "laravel/helpers": "^1.1",
         "laravel/passport": "^8.3",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "laravolt/avatar": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
