@@ -24,14 +24,14 @@ Route::group([
         'as' => 'auth.',
         'namespace' => 'Auth'
     ], function () {
-        Route::post('login', 'AuthController@login');
+        Route::post('login', 'AuthController@login')->name('login');
         Route::post('signUp', 'AuthController@signUp')->name('signUp');
         Route::get('signUp/activate/{token}', 'AuthController@signUpActivate')->name('signUp.activate');
 
         Route::group([
             'middleware' => 'auth:api'
         ], function() {
-            Route::get('logout', 'AuthController@logout');
+            Route::get('logout', 'AuthController@logout')->name('logout');
             Route::get('user', 'AuthController@user')->name('user.information');
         });
 
@@ -40,9 +40,9 @@ Route::group([
             'as' => 'password.',
             'prefix' => 'password',
         ], function() {
-            Route::post('create', 'PasswordResetController@create');
+            Route::post('create', 'PasswordResetController@create')->name('create');
             Route::get('find/{token}', 'PasswordResetController@find')->name('find');
-            Route::post('reset', 'PasswordResetController@reset');
+            Route::post('reset', 'PasswordResetController@reset')->name('reset');
         });
     });
 
