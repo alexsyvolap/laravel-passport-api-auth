@@ -66,10 +66,10 @@ class AuthController extends Controller
 
         switch ($user->role) {
             case $adminRole:
-                $tokenResult = $user->createToken('Subscriber Access Token', [$adminRole->key]);
+                $tokenResult = $user->createToken('Administrator Access Token', [$adminRole->key]);
                 break;
             case $subscriberRole:
-                $tokenResult = $user->createToken('Administrator Access Token', [$subscriberRole->key]);
+                $tokenResult = $user->createToken('Subscriber Access Token', [$subscriberRole->key]);
                 break;
         }
 
